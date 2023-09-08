@@ -66,8 +66,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         searchButton.setOnClickListener {
             if (departureFrom.equals(destinationTo)) {
                 MaterialAlertDialogBuilder(requireContext())
-                    .setTitle("For real?")
-                    .setMessage("You are already there!")
+                    .setTitle("You are already there!")
+                    .setMessage("Please input a destination that is not the same as your departure point")
                     .setNeutralButton(getString(R.string.cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
