@@ -10,4 +10,5 @@
     <color name="main_orange">#EF5F00</color>
     <color name="secondary_orange">#E88A4C</color>
     <color name="second_text">#92000000</color>
+    <color name="splash_background">#FFFFFF</color>
 </resources>
