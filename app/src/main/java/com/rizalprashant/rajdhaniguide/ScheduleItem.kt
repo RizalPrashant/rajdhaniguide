@@ -1,4 +1,4 @@
-package dz.notacompany.el_cous
+package com.rizalprashant.rajdhaniguide
 
 data class ScheduleItem(
     val transport : String,

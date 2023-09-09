@@ -1,10 +1,11 @@
-package dz.notacompany.el_cous
+package com.rizalprashant.rajdhaniguide
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 @SuppressLint("CustomSplashScreen")

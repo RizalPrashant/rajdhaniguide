@@ -1,4 +1,4 @@
-package dz.notacompany.el_cous
+package com.rizalprashant.rajdhaniguide
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -14,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Source
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 import java.net.InetSocketAddress
