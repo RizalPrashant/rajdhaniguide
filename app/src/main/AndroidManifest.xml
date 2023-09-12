@@ -33,6 +33,11 @@
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity">
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8059810811504433~1022819587"/>
+
     </application>
 
 </manifest>
