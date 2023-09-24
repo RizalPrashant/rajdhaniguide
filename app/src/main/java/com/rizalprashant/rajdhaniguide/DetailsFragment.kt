@@ -66,7 +66,12 @@ class DetailsFragment(private val documentID : String) : Fragment(R.layout.fragm
 
             // Initialize stuff depending on the above
             var thisTitle = "Viable Route"
-            var dialogMessage = schedulesList[position].transport + " option available from " + schedulesList[position].startPoint + " to " + schedulesList[position].endPoint + " and vice versa."
+            var dialogMessage: String
+            if (schedulesList[position].startPoint == "Ring Road") {
+                 dialogMessage = schedulesList[position].transport + " option available running through Ring road."
+            } else{
+                 dialogMessage = schedulesList[position].transport + " option available from " + schedulesList[position].startPoint + " to " + schedulesList[position].endPoint + " and vice versa."
+            }
 
             // Ask for confirmation
             MaterialAlertDialogBuilder(requireContext())
@@ -97,14 +102,20 @@ class DetailsFragment(private val documentID : String) : Fragment(R.layout.fragm
 
         // Keep all routes here
         val routeEndpoint1 = arrayListOf("Bus", "Hattiban", "Ratnapark")
-        val route1 = hashSetOf("Hattiban", "Classic Chowk", "Satdobato", "Lagankhel", "Kupondole", "Ratnapark")
+        val route1 = hashSetOf("Hattiban", "Classic Chowk", "Satdobato", "Lagankhel","Patan", "Kumaripati", "United Academy", "Jawalakhel", "Pulchowk", "Hariharbhawan",  "Kupondole", "Thapathali", "Maitighar", "Singha Durbar", "Bhadrakali", "Sundhara", "Ratnapark")
 
         val routeEndpoint2 = arrayListOf("Bus", "Lagankhel", "Ratnapark")
-        val route2 = hashSetOf("Lagankhel", "Kupondole", "Ratnapark")
+        val route2 = hashSetOf("Lagankhel", "Patan", "Kumaripati", "United Academy", "Jawalakhel", "Pulchowk", "Hariharbhawan", "Kupondole", "Thapathali", "Maitighar", "Singha Durbar", "Bhadrakali", "Sundhara", "Ratnapark")
+
+        val routeEndpoint3 = arrayListOf("Bus", "Ring Road", "N/A")
+        val route3 = hashSetOf("Gaushala","Gopi Krishna", "Sukhedhara", "Dhumbarahi", "Chappal Karkhana", "Narayan Gopal Chowk", "Basundhara", "Samakhushi","Gongabu",
+            "Machhapokhari", "Balaju", "Banasthali", "Dhungedhara", "Sano Bharyang", "Thulo Bharyang", "Swyambhu", "Kalanki", "Khasibazaar", "Balkhu", "Sanepa", "Ekantakuna", "Satdobato", "Gwarko", "Koteshwor", "Tinkune", "Sinamangal",
+            "Airport", "Pinglasthan")
 
         // Put data into the HashMap
         hashMap[routeEndpoint1] = route1
         hashMap[routeEndpoint2] = route2
+        hashMap[routeEndpoint3] = route3
 
         addDirectRouteList(hashMap, schedulesList)
     }

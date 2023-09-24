@@ -31,7 +31,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         mainAct.deleteRouteButton.visibility = View.GONE
 
         // These lists store all the departures, destinations and their IDs from the database
-        val cityArray = arrayOf<String>("Hattiban", "Classic Chowk", "Satdobato", "Lagankhel", "Kupondole", "Ratnapark")
+        val cityArray12 = arrayOf<String>("Hattiban", "Classic Chowk", "Satdobato", "Lagankhel", "Patan", "Kumaripati", "United Academy", "Jawalakhel", "Pulchowk", "Hariharbhawan", "Kupondole", "Thapathali", "Maitighar", "Singha Durbar", "Bhadrakali", "Sundhara",  "Ratnapark")
+        val cityArray3 = arrayOf<String>("Gaushala","Gopi Krishna", "Sukhedhara", "Dhumbarahi", "Chappal Karkhana", "Narayan Gopal Chowk", "Basundhara", "Samakhushi","Gongabu",
+            "Machhapokhari", "Balaju", "Banasthali", "Dhungedhara", "Sano Bharyang", "Thulo Bharyang", "Swyambhu", "Kalanki", "Khasibazaar", "Balkhu", "Sanepa", "Ekantakuna", "Gwarko", "Koteshwor", "Tinkune", "Sinamangal",
+            "Airport", "Pinglasthan")
+        val cityArray = cityArray12 + cityArray3
         val departureList = arrayListOf<String>()
         departureList.addAll(cityArray)
         val destinationList = arrayListOf<String>()
