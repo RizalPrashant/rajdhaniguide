@@ -15,8 +15,6 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.Source
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,7 +26,6 @@ import java.util.concurrent.LinkedBlockingQueue
 
 class MainActivity : AppCompatActivity() {
 
-    private val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
 
     private lateinit var loading: AlertDialog
@@ -87,50 +84,6 @@ class MainActivity : AppCompatActivity() {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data = Uri.parse("https://github.com/50t0r25/EL-Cous")
             startActivity(openURL)
-        }
-
-        // Button to delete Route (Only available for admins)
-        deleteRouteButton.setOnClickListener {
-
-            // Dialog to ask confirmations
-            MaterialAlertDialogBuilder(this)
-                .setTitle(getString(R.string.caution))
-                .setMessage(getString(R.string.delete_route))
-                .setNeutralButton(getString(R.string.cancel)) { dialog, _ ->
-                    dialog.dismiss()
-                }
-                .setPositiveButton(getString(R.string.confirm)) { dialog, _ ->
-                    // User confirms delete
-
-                    dialog.dismiss()
-
-                    createLoadingDialog()
-
-                    val routeRef = db.collection("trajets").document(currentDocument)
-
-                    // Fetch all the scheduled times of current displayed Route
-                    // Used because Transactions can't fetch a whole collection for some reasons ?????????????
-                    // PS: i hate google for this
-                    routeRef.collection("horaires").get(Source.SERVER)
-                        .addOnSuccessListener { horaires ->
-
-                            db.runBatch { batch ->
-
-                                // Delete all the documents inside
-                                for (horaire in horaires) {
-                                    batch.delete(routeRef.collection("horaires").document(horaire.id))
-                                }
-
-                                batch.delete(routeRef) // Delete Route document
-
-                            }.addOnCompleteListener {
-                                dismissLoadingDialog()
-
-                                supportFragmentManager.popBackStack()
-                            }
-                        }
-                }
-                .show()
         }
     }
 

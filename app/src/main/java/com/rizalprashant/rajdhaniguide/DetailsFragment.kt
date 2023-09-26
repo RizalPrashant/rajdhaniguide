@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.Source
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,11 +15,8 @@ import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment(private val documentID : String) : Fragment(R.layout.fragment_details) {
 
-    private val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
     private lateinit var mainAct : MainActivity
-
-    private lateinit var source: Source
     var departureFrom: String? = ""
     var destinationTo: String? = ""
 

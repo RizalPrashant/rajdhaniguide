@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "555979617336",
-    "project_id": "el-cous",
-    "storage_bucket": "el-cous.appspot.com"
+    "project_number": "974261987826",
+    "project_id": "rajdhaniguide",
+    "storage_bucket": "rajdhaniguide.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:555979617336:android:3fa497ecdf2949fbf3e2cd",
+        "mobilesdk_app_id": "1:974261987826:android:90b402d453cc687f0aa36b",
         "android_client_info": {
           "package_name": "com.rizalprashant.rajdhaniguide"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "555979617336-6stpqnuvhu5rcq5338dki57jeju2r3iu.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCEoViK93D7mDoPRnwTN5zWvnA2iXdMb7M"
+          "current_key": "AIzaSyDUuawG87CkgOLNeMw4FkFo4qemKz0CpWs"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "555979617336-6stpqnuvhu5rcq5338dki57jeju2r3iu.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

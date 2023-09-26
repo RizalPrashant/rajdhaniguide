@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.firestore.Source
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,10 +12,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private val db = Firebase.firestore
     private lateinit var mainAct : MainActivity
-
-    private lateinit var source: Source
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -87,6 +83,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 departureSpinner.setItems(String())
                 destinationSpinner.setItems(String())
             }
+            // Write a message to the database
+            val database = Firebase.database
+            val myRef = database.getReference("message")
+
+            myRef.setValue("Hello, World!")
         }
 
         displayHelpButton.setOnClickListener {
