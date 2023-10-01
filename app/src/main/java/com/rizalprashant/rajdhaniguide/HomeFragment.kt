@@ -63,6 +63,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         // Search clicked
         searchButton.setOnClickListener {
+            // Write a message to the database
+            val database = Firebase.database
+            val myRef = database.getReference("message")
+            myRef.setValue("Hello, World!")
             if (departureFrom.equals(destinationTo)) {
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle("You are already there!")
@@ -83,11 +87,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 departureSpinner.setItems(String())
                 destinationSpinner.setItems(String())
             }
-            // Write a message to the database
-            val database = Firebase.database
-            val myRef = database.getReference("message")
-
-            myRef.setValue("Hello, World!")
         }
 
         displayHelpButton.setOnClickListener {
