@@ -37,4 +37,11 @@
     <string name="help_title">What do I do?</string>
     <string name="help_description">Simply enter your departure and destination points and Rajdhani Guide will provide you with the best public transport routes to get there without having to ask anyone else or stay confused and lost.</string>
     <string name="_return">Return</string>
+    <string name="competition_title">Competition</string>
+    <string name="competition_info">Competition is coming</string>
+    <string name="fullname">Enter full name</string>
+    <string name="phonenumber">Enter phone number</string>
+    <string name="route_input">Enter route information</string>
+    <string name="submit">Submit</string>
+    <string name="competition_top_bar_text">Competition</string>
 </resources>

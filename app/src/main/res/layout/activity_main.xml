@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toTopOf="@+id/flFragment"
         app:layout_constraintEnd_toStartOf="@id/githubButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/admin_icon"
+        app:srcCompat="@drawable/finish"
         app:tint="@color/white" />
 
     <ImageView

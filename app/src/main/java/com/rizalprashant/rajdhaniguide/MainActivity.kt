@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         adminButton.setOnClickListener {
-            replaceCurrentFragment(AdminPanelFragment(),false)
+            replaceCurrentFragment(CompetitionFragment(),false)
         }
 
         githubButton.setOnClickListener {
