@@ -20,9 +20,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         mainAct = activity as MainActivity // Reference to MainActivity
 
         // Resetting the elements of the top bar
-        mainAct.topBarLayout.visibility = View.GONE
-        mainAct.topBarTextView.visibility = View.VISIBLE
-        mainAct.adminButton.visibility = View.VISIBLE
+        mainAct.topBarLayout.visibility = View.VISIBLE
+        mainAct.topBarTextView.visibility = View.GONE
+        mainAct.adminButton.visibility = View.GONE
         mainAct.githubButton.visibility = View.GONE
         mainAct.deleteRouteButton.visibility = View.GONE
 
@@ -64,9 +64,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // Search clicked
         searchButton.setOnClickListener {
             // Write a message to the database
-            val database = Firebase.database
-            val myRef = database.getReference("message")
-            myRef.setValue("Hello, World!")
+            //val database = Firebase.database
+            //val myRef = database.getReference("message")
+            //myRef.setValue("Hello, World!")
             if (departureFrom.equals(destinationTo)) {
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle("You are already there!")

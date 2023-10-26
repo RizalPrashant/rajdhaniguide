@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/card_background_shape"
+    android:background="@color/card3"
     android:padding="10dp">
 
 
@@ -105,7 +105,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/spinner_background"
-                android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/departureTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/departureTextView"
@@ -126,7 +125,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:background="@drawable/spinner_background"
-                android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/destinationTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/destinationTextView"

@@ -13,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:fontFamily="@font/nunito_extrabold"
         android:padding="10dp"
-        android:text="@string/top_bar_home"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="25sp"
         android:visibility="visible"
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:padding="9dp"
-            app:srcCompat="@drawable/back"
+            app:srcCompat="@drawable/general_back_icon_white"
             app:tint="@color/white" />
 
         <TextView
@@ -46,7 +46,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/nunito_extrabold"
             android:padding="10dp"
-            android:text="@string/top_bar_schedules"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="25sp" />
 

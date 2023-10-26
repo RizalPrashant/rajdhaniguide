@@ -5,8 +5,10 @@ import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.gms.ads.AdRequest
@@ -18,6 +20,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dz.notacompany.el_cous.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_user_dashboard.drawer_layout
 import java.io.IOException
 import java.net.InetSocketAddress
 import java.net.Socket
@@ -41,39 +44,22 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         MobileAds.initialize(this) {}
+        setContentView(R.layout.activity_main)
 
-        // Define the shared preferences
-        val sharedpref: SharedPreferences =
-            applicationContext.getSharedPreferences(
-                "dz.notacompany.el_cous",
-                MODE_PRIVATE
-            )
-
-        // If the token says false or is null, it means it's the first time launch
-        val token: String? = sharedpref.getString("token", null)
-        if (token == "False" || token == null) {
-            // First time launch
-
-            // Launch the SplashActivity
-            val intent = Intent(this, SplashActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-
-        } else {
-            // Not the first time launch
-
-            // Display MainActivity's layout
-            setContentView(R.layout.activity_main)
-
-            mAdView = findViewById<View>(R.id.adView) as AdView
-            val adRequest = AdRequest.Builder().build()
-            mAdView.loadAd(adRequest)
-        }
+        mAdView = findViewById<View>(R.id.adView) as AdView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         replaceCurrentFragment(HomeFragment(),true)
 
         topBarLayout.setOnClickListener {
-            supportFragmentManager.popBackStack()
+            if (supportFragmentManager.backStackEntryCount == 0){
+                val i = Intent(applicationContext, AllCateogriesActivity::class.java)
+                startActivity(i)
+                finish()
+            } else{
+                supportFragmentManager.popBackStack()
+            }
         }
 
         adminButton.setOnClickListener {
@@ -92,6 +78,15 @@ class MainActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and sign them up if they aren't.
         if (auth.currentUser == null) {
             auth.signInAnonymously()
+        }
+    }
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount == 0){
+            val i = Intent(applicationContext, AllCateogriesActivity::class.java)
+            startActivity(i)
+            finish()
+        } else{
+            supportFragmentManager.popBackStack()
         }
     }
 

@@ -3,13 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="dz.notacompany.el_cous">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        tools:replace="android:allowBackup"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ELCous">
+        android:theme="@style/Theme.ELCous"
+        android:usesCleartextTraffic="true">
+    >
+
 
         <activity
             android:name="com.rizalprashant.rajdhaniguide.MainActivity"
@@ -18,12 +25,43 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity">
+        </activity>
+
+        <activity android:name="com.rizalprashant.rajdhaniguide.ProfileActivity"></activity>
+        <activity android:name="com.rizalprashant.rajdhaniguide.script.ScriptDataActivity" />
+        <activity android:name="com.rizalprashant.rajdhaniguide.webview.ECommerceActivity" />
+        <activity android:name="com.rizalprashant.rajdhaniguide.PlaceDetailActivity" />
+        <activity
+            android:name="com.rizalprashant.rajdhaniguide.AllPlacesActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name="com.rizalprashant.rajdhaniguide.LoginSignup.SignUpActivity" />
+        <activity android:name="com.rizalprashant.rajdhaniguide.LoginSignup.LoginActivity" />
+        <activity
+            android:name="com.rizalprashant.rajdhaniguide.LoginSignup.StartUpScreenActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity
+            android:exported="true"
+            android:name="com.rizalprashant.rajdhaniguide.AllCateogriesActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        </activity>
+        <activity android:name="com.rizalprashant.rajdhaniguide.UserDashboardActivity" />
+        <activity
+            android:name="com.rizalprashant.rajdhaniguide.OnBoardingActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.rizalprashant.rajdhaniguide.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
         <activity
             android:name="com.rizalprashant.rajdhaniguide.SplashActivity"
